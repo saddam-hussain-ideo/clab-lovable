@@ -1,0 +1,6 @@
+
+# Needed for Supabase CLI integration
+project_id = "vyagsvyrwgmmdmwdbzla"
+
+# Allow CoinGecko API
+allowed_http_hosts = ["api.coingecko.com", "pro-api.coingecko.com"]

@@ -1,0 +1,38 @@
+
+[
+  {
+    "id": 1,
+    "question": "Who is the creator of Bitcoin?",
+    "options": ["Satoshi Nakamoto", "Vitalik Buterin", "Elon Musk", "Mark Zuckerberg"],
+    "correct_answer": "Satoshi Nakamoto",
+    "premium": false
+  },
+  {
+    "id": 2,
+    "question": "In what year was Bitcoin created?",
+    "options": ["2008", "2009", "2010", "2011"],
+    "correct_answer": "2009",
+    "premium": false
+  },
+  {
+    "id": 3,
+    "question": "What was the first documented purchase made with Bitcoin?",
+    "options": ["A car", "Two pizzas", "A house", "A computer"],
+    "correct_answer": "Two pizzas",
+    "premium": false
+  },
+  {
+    "id": 4,
+    "question": "What was the price of 1 Bitcoin when it was first traded?",
+    "options": ["$0.0008", "$0.08", "$0.8", "$8"],
+    "correct_answer": "$0.0008",
+    "premium": false
+  },
+  {
+    "id": 5,
+    "question": "What is the maximum number of Bitcoins that will ever exist?",
+    "options": ["21 million", "42 million", "100 million", "Unlimited"],
+    "correct_answer": "21 million",
+    "premium": false
+  }
+]

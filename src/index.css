@@ -1,0 +1,454 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 300 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 300 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground m-0 p-0;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    @apply m-0 p-0;
+  }
+}
+
+.pt-navbar {
+  padding-top: calc(24px + 76px);
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hero-carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-gradient {
+  background: linear-gradient(to bottom, #1a0b2e, #171717);
+}
+
+.presale-section-container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.presale-section-container .card {
+  padding: 0.75rem;
+}
+
+@keyframes width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-drawLine {
+  animation: drawLine 3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2 {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.animate-marquee2 {
+  animation: marquee2 25s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@keyframes marquee-slow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee2-slow {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-slow {
+  animation: marquee-slow 100s linear infinite;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+}
+
+.animate-marquee2-slow {
+  animation: marquee2-slow 100s linear infinite;
+  display: flex;
+  align-items: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translateZ(0);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.editor-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: currentColor;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+.admin-dark-text input,
+.admin-dark-text textarea,
+.admin-dark-text select {
+  @apply text-zinc-100 bg-zinc-800 border-zinc-700;
+}
+
+.admin-dark-text .bg-white,
+.admin-dark-text .bg-background {
+  background-color: #18181b;
+  color: #f4f4f5;
+}
+
+.admin-dark-text button {
+  @apply text-zinc-100;
+}
+
+input::placeholder, 
+textarea::placeholder {
+  @apply text-muted-foreground;
+}
+
+.admin-page {
+  @apply bg-zinc-950 text-zinc-100;
+}
+
+.admin-sidebar {
+  @apply bg-zinc-950 border-r border-zinc-800 text-zinc-100;
+}
+
+.admin-header {
+  @apply bg-zinc-950 border-b border-zinc-800 text-zinc-100;
+}
+
+.admin-card {
+  @apply bg-zinc-900 border-zinc-800 text-zinc-100;
+}
+
+.admin-form-input {
+  @apply bg-zinc-800 border-zinc-700 text-zinc-100 placeholder:text-zinc-500;
+}
+
+.admin-content {
+  @apply bg-zinc-950 text-zinc-100;
+}
+
+.admin-table {
+  @apply bg-zinc-900 border-zinc-800 text-zinc-100;
+}
+
+.admin-table th {
+  @apply text-zinc-400 bg-zinc-900;
+}
+
+.admin-table td {
+  @apply text-zinc-300 border-zinc-800;
+}
+
+.admin-table tr {
+  @apply border-b border-zinc-800 hover:bg-zinc-800/50;
+}
+
+.admin-dialog {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100;
+}
+
+.admin-dialog-header {
+  @apply bg-zinc-800 text-zinc-100;
+}
+
+.admin-select {
+  @apply bg-zinc-800 border-zinc-700 text-zinc-100;
+}
+
+.admin-select-option {
+  @apply bg-zinc-800 text-zinc-100;
+}
+
+.admin-button {
+  @apply bg-zinc-800 hover:bg-zinc-700 text-zinc-100;
+}
+
+.admin-page input,
+.admin-page textarea,
+.admin-page select,
+.admin-content input,
+.admin-content textarea,
+.admin-content select,
+.admin-sidebar input,
+.admin-sidebar textarea,
+.admin-sidebar select {
+  @apply bg-zinc-800 border-zinc-700 text-zinc-100;
+}
+
+.admin-page [role="dialog"],
+.admin-content [role="dialog"] {
+  @apply bg-zinc-900 border-zinc-700;
+}
+
+.admin-page .bg-white,
+.admin-page .bg-gray-50,
+.admin-page .bg-gray-100,
+.admin-content .bg-white,
+.admin-content .bg-gray-50,
+.admin-content .bg-gray-100 {
+  @apply bg-zinc-900 text-zinc-100;
+}
+
+.admin-page .bg-black,
+.admin-page .bg-gray-900,
+.admin-content .bg-black,
+.admin-content .bg-gray-900 {
+  @apply text-zinc-100;
+}
+
+.admin-page .badge,
+.admin-content .badge {
+  @apply bg-zinc-800 text-zinc-100 border-zinc-700;
+}
+
+[data-radix-popper-content-wrapper] [role="dialog"] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100 !important;
+}
+
+[role="combobox"][data-radix-select-trigger],
+.radix-select-trigger,
+[class*="SelectTrigger"],
+[data-state="closed"],
+[data-state="open"] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100 !important;
+}
+
+[role="presentation"] [role="listbox"],
+div[data-radix-select-content] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100 !important;
+}
+
+.SelectTrigger,
+.select-trigger,
+button[data-radix-collection-item] {
+  background-color: #121212 !important;
+  color: white !important;
+  border-color: #333 !important;
+}
+
+@layer utilities {
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateX(6px);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}
+
+.crypto-ticker-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+}
+
+.crypto-ticker-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transform: translateZ(0);
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+}
+
+.presale-widget-container input,
+.presale-section-container input,
+[id^="presale"] input,
+.purchase-form input {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100;
+}
+
+.presale-widget-container [data-radix-select-trigger],
+.presale-section-container [data-radix-select-trigger],
+.purchase-form [data-radix-select-trigger] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100;
+}
+
+.presale-widget-container [data-radix-select-content],
+.presale-section-container [data-radix-select-content],
+.purchase-form [data-radix-select-content] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100;
+}
+
+.presale-widget-container [data-radix-select-item],
+.presale-section-container [data-radix-select-item],
+.purchase-form [data-radix-select-item] {
+  @apply text-zinc-100 hover:bg-zinc-800;
+}
+
+.presale-section-container .document-button-container {
+  @apply flex justify-center w-full mt-4;
+}
+
+.document-button {
+  @apply rounded-xl transition-all duration-300 flex items-center justify-center gap-2 
+         bg-gradient-to-r from-purple-600/90 to-purple-800/90 border-purple-500/50 
+         hover:from-purple-500 hover:to-purple-700 hover:border-purple-400 
+         hover:shadow-md hover:shadow-purple-500/20 text-white font-medium px-5 py-2;
+}
+
+.document-button:hover {
+  @apply transform scale-105;
+}
+
+[role="combobox"][data-radix-select-trigger],
+.radix-select-trigger,
+[class*="SelectTrigger"],
+[data-state="closed"],
+[data-state="open"] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100 !important;
+}
+
+[role="presentation"] [role="listbox"],
+div[data-radix-select-content],
+[data-radix-popper-content-wrapper] [role="dialog"] {
+  @apply bg-zinc-900 border-zinc-700 text-zinc-100 !important;
+}
+
+.SelectTrigger,
+.select-trigger,
+button[data-radix-collection-item] {
+  background-color: #121212 !important;
+  color: white !important;
+  border-color: #333 !important;
+}
